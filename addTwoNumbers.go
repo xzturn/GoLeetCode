@@ -7,36 +7,31 @@ type ListNode struct {
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     fp := func(p **ListNode) int {
-        x := 0
         if (*p).Val > 9 {
             (*p).Val -= 10
-            x = 1
+            return 1
         }
-        return x
+        return 0
+    }
+
+    mv := func(p **ListNode) int {
+        if *p != nil {
+            if *p = (*p).Next; *p != nil {
+                return (*p).Val
+            }
+        }
+        return 0
     }
 
     l := &ListNode{l1.Val + l2.Val, nil}
     x := fp(&l)
-    k := l
+    k, v1, v2 := l, 0, 0
     for {
-        l1, l2 = l1.Next, l2.Next
-        if l1 == nil { break }
-        if l2 == nil { break }
-        k.Next = &ListNode{l1.Val + l2.Val + x, nil}
+        v1, v2 = mv(&l1), mv(&l2)
+        if l1 == nil && l2 == nil { break }
+        k.Next = &ListNode{v1 + v2 + x, nil}
         k = k.Next
         x = fp(&k)
-    }
-    for l1 != nil {
-        k.Next = &ListNode{l1.Val + x, nil}
-        k = k.Next
-        x = fp(&k)
-        l1 = l1.Next
-    }
-    for l2 != nil {
-        k.Next = &ListNode{l2.Val + x, nil}
-        k = k.Next
-        x = fp(&k)
-        l2 = l2.Next
     }
     if x != 0 {
         k.Next = &ListNode{x, nil}
@@ -45,7 +40,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 
 func init() {
-	runtime.GOMAXPROCS(runtime.NumCPU())
+    runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
 func main() {
