@@ -1,0 +1,2 @@
+# GoLeetCode
+Coding everyday!
