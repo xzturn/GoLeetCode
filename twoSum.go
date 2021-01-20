@@ -33,7 +33,7 @@ func init() {
 }
 
 func main() {
-	flag.Parse()
+    flag.Parse()
 
     if *maxVal - *minVal + 1 < *seqLen || *seqLen < 1 {
         fmt.Fprintf(os.Stderr, "Bad paramerter: n = %d, minv = %d, maxv = %d\n", *seqLen, *minVal, *maxVal)
