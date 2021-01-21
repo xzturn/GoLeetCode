@@ -7,11 +7,9 @@ type ListNode struct {
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     fp := func(p **ListNode) int {
-        if (*p).Val > 9 {
-            (*p).Val -= 10
-            return 1
-        }
-        return 0
+        x := (*p).Val / 10
+        (*p).Val %= 10
+        return x
     }
 
     mv := func(p **ListNode) int {
@@ -37,10 +35,6 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
         k.Next = &ListNode{x, nil}
     }
     return l
-}
-
-func init() {
-    runtime.GOMAXPROCS(runtime.NumCPU())
 }
 
 func main() {
