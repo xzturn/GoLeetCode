@@ -1,4 +1,4 @@
-package main
+package goleet
 
 type ListNode struct {
     Val  int
@@ -35,7 +35,4 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
         k.Next = &ListNode{x, nil}
     }
     return l
-}
-
-func main() {
 }
