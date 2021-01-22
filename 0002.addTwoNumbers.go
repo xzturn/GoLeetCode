@@ -1,4 +1,4 @@
-package goleet
+package GoLeetCode
 
 type ListNode struct {
     Val  int

@@ -1,4 +1,4 @@
-package goleet
+package GoLeetCode
 
 func lengthOfLongestSubstring(s string) int {
     n := len(s)
