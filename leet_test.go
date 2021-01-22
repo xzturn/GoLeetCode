@@ -17,9 +17,8 @@ const (
 
 var g *xgen.XGenerator = xgen.NewXGenerator()
 
-func Test0001(t *testing.T) {
+func prepare0001(n, minv, maxv int) ([]int, int, int, int) {
     seq := g.GenShuffle(seqLen, minVal, maxVal)
-
     i, j := rand.Intn(seqLen), rand.Intn(seqLen)
     for {
         if i != j {
@@ -28,6 +27,11 @@ func Test0001(t *testing.T) {
         j = rand.Intn(seqLen)
     }
     target := seq[i] + seq[j]
+    return seq, target, i, j
+}
+
+func Test0001(t *testing.T) {
+    seq, target, i, j := prepare0001(seqLen, minVal, maxVal)
     fmt.Printf("%v\n%d = %d + %d\ntarget = nums[%d] + nums[%d]\n", seq, target, seq[i], seq[j], i, j)
 
     ts := time.Now()
@@ -38,4 +42,8 @@ func Test0001(t *testing.T) {
 }
 
 func Benchmark0001(b *testing.B) {
+    seq, target, _, _ := prepare0001(seqLen, minVal, maxVal)
+    for i := 0; i < b.N; i++ {
+        twoSum(seq, target)
+    }
 }

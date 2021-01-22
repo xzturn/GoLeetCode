@@ -1,16 +1,3 @@
-//package main
-//
-//import (
-//    "flag"
-//    "fmt"
-//    "math/rand"
-//    "os"
-//    "runtime"
-//    "time"
-//
-//    "github.com/xzturn/xgen"
-//)
-
 package GoLeetCode
 
 func twoSum(nums []int, target int) []int {
@@ -25,39 +12,3 @@ func twoSum(nums []int, target int) []int {
     }
     return nil
 }
-//
-//var seqLen *int = flag.Int("n", 32, "the rand int sequence length")
-//var minVal *int = flag.Int("min", 1, "the min value of the sequence")
-//var maxVal *int = flag.Int("max", 10000, "the max value of the sequence")
-//
-//func init() {
-//	runtime.GOMAXPROCS(runtime.NumCPU())
-//}
-//
-//func main() {
-//    flag.Parse()
-//
-//    if *maxVal - *minVal + 1 < *seqLen || *seqLen < 1 {
-//        fmt.Fprintf(os.Stderr, "Bad paramerter: n = %d, minv = %d, maxv = %d\n", *seqLen, *minVal, *maxVal)
-//        os.Exit(1)
-//    }
-//
-//    g := xgen.NewXGenerator()
-//    seq := g.GenShuffle(*seqLen, *minVal, *maxVal)
-//
-//    i, j := rand.Intn(*seqLen), rand.Intn(*seqLen)
-//    for {
-//        if i != j {
-//            break
-//        }
-//        j = rand.Intn(*seqLen)
-//    }
-//    target := seq[i] + seq[j]
-//    fmt.Printf("%v\n%d = %d + %d\ntarget = nums[%d] + nums[%d]\n", seq, target, seq[i], seq[j], i, j)
-//
-//    ts := time.Now()
-//    res := twoSum(seq, target)
-//    te := time.Now()
-//
-//    fmt.Printf("[%v] %d, %d ==> %v\n", te.Sub(ts), i, j, res)
-//}
