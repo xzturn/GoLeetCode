@@ -47,3 +47,11 @@ func Benchmark0001(b *testing.B) {
         twoSum(seq, target)
     }
 }
+
+func Test0006(t *testing.T) {
+    s := "PAYPALISHIRING"
+    t1 := convert(s, 3)
+    t2 := convert(s, 4)
+    fmt.Printf("%s [3] --> %s\n", s, t1)
+    fmt.Printf("%s [4] --> %s\n", s, t2)
+}
