@@ -1,6 +1,6 @@
 package GoLeetCode
 
-func convert(s string, numRows int) string {
+func zigZagConvert(s string, numRows int) string {
     if (numRows == 1) { return s }
     
     n, step, cur := len(s), (numRows - 1) * 2, 0
