@@ -1,4 +1,4 @@
-package GoLeetCode
+package goleet
 
 func reverseInteger(x int) int {
     sig, v := 1, x

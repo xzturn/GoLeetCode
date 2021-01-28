@@ -1,4 +1,4 @@
-module github.com/xzturn/GoLeetCode
+module github.com/xzturn/goleet
 
 go 1.15
 

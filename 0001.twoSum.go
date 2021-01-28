@@ -1,4 +1,4 @@
-package GoLeetCode
+package goleet
 
 func twoSum(nums []int, target int) []int {
     res := make([]int, 2)

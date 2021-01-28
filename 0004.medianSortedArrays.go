@@ -1,4 +1,4 @@
-package GoLeetCode
+package goleet
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
     n1, n2 := len(nums1), len(nums2)

@@ -1,4 +1,4 @@
-package GoLeetCode
+package goleet
 
 func longestPalindrome(s string) string {
     n := len(s)

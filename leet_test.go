@@ -1,4 +1,4 @@
-package GoLeetCode
+package goleet
 
 import (
     "fmt"

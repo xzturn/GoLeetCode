@@ -1,4 +1,4 @@
-package GoLeetCode
+package goleet
 
 func myAtoi(s string) int {
     n, i := len(s), 0
