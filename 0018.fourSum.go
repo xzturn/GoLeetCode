@@ -10,7 +10,7 @@ func fourSum(nums []int, target int) [][]int {
     
     sort.Ints(nums)
    
-    move := func(l, r int) (int, int) {
+    next := func(l, r int) (int, int) {
         for l < r {
             switch {
             case nums[l] == nums[l+1]:
@@ -37,22 +37,18 @@ func fourSum(nums []int, target int) [][]int {
                 r--
             default:
                 res = append(res, []int{nums[i], nums[j], nums[l], nums[r]})
-                l, r = move(l, r)
+                l, r = next(l, r)
             }
         }
     }
 
-    next := func(i, j int) (int, int) {
-        k := j+1
-        for k < n && nums[k] == nums[k-1] {
-            k++
+    next2 := func(i, j int) (int, int) {
+        j++
+        for j < n && nums[j] == nums[j-1] {
+            j++
         }
-        if k < n {
-            return i, k
-        }
-
-        if nums[i] == nums[j] {
-            return n, n
+        if j < n {
+            return i, j
         }
         
         i++
@@ -65,7 +61,7 @@ func fourSum(nums []int, target int) [][]int {
     i, j := 0, 1
     for i < n && j < n {
         select2(i, j, j+1, n-1)
-        i, j = next(i, j)
+        i, j = next2(i, j)
     }
     
     return res
