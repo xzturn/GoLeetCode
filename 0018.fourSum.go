@@ -58,10 +58,8 @@ func fourSum(nums []int, target int) [][]int {
         return i, i+1
     }
     
-    i, j := 0, 1
-    for i < n && j < n {
+    for i, j := 0, 1; j < n; i, j = next2(i, j) {
         select2(i, j, j+1, n-1)
-        i, j = next2(i, j)
     }
     
     return res
