@@ -1,7 +1,7 @@
 package goleet
 
 func maxArea(height []int) int {
-    n, ma := len(height), 0
+    n, res := len(height), 0
     l, r, h := 0, n - 1, 0
     for l < r {
         w := r - l
@@ -18,9 +18,9 @@ func maxArea(height []int) int {
             r--
         }
         if t := w * h; t > ma {
-            ma = t
+            res = t
         }
     }
 
-    return ma
+    return res
 }
